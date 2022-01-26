@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, Image } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { styles } from './styles';
 
-export default function Login() {
+export default function Login({ navigation }) {
 
     const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -24,7 +25,7 @@ export default function Login() {
                 Faça seu login
             </Text>
             <View style={styles.inputContainer}>
-                <Input 
+                <Input
                     placeholder="E-mail"
                     textContentType="emailAddress"
                     value={email}
@@ -42,10 +43,27 @@ export default function Login() {
             </View>
             <View style={styles.buttonContainer}>
 				<Button 
-                    title="Teste"
+                    title="Entrar"
                     onPress={pressMe}
                 />
 			</View>
+            <View style={styles.textContainer}>
+                <Text style={styles.text}>Esqueci minha senha</Text>
+            </View>
+            <View style={styles.textContainerCreateAccount}>
+                <View style={styles.teste}>
+                <Icon
+                    style={styles.iconContainer}
+                    name='login'
+                    color= '#fff'
+                    size= {18}
+                />
+                </View>
+                <Button style={styles.text}
+                    title='Criar conta'
+                    onPress={() => navigation.navigate('CreateAccountPage')}
+                ></Button>
+            </View>
         </View>
     );
 };
