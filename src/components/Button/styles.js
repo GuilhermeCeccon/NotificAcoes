@@ -5,13 +5,13 @@ export const styles = StyleSheet.create({
         marginTop: 20,
         paddingVertical: 10,
         paddingHorizontal: 20,
-        backgroundColor: '#fff',
+        backgroundColor: '#56CCF2',
         borderRadius: 6,
         width: '50%'
-
     },
     text: {
-        color: 'purple',
-        textAlign: 'center'
+        color: 'white',
+        textAlign: 'center',
+        fontFamily: 'Open Sans'
     }
 });
